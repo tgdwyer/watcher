@@ -1,8 +1,11 @@
 import Process
 import Watch
 
-action arg = do
-    print arg
-    docTest
+action program args fileChange = do
+    print fileChange
+    runProc program args
 
-main = watch action
+program = "c:/Users/Tim Dwyer/AppData/Roaming/local/bin/doctest.exe"
+args = ["c:\\temp\\tst.hs"]
+
+main = watch (action program args)

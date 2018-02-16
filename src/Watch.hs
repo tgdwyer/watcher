@@ -11,7 +11,7 @@ watch action =
     -- start a watching job (in the background)
     watchDir
       mgr          -- manager
-      "."          -- directory to watch
+      "c:\\temp"          -- directory to watch
       (const True) -- predicate
       action       -- action
 
