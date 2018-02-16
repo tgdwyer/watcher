@@ -38,6 +38,9 @@ executables:
     - -with-rtsopts=-N
     dependencies:
     - watcher
+    - filepath
+    - pureMD5
+    - bytestring
 
 tests:
   watcher-test:

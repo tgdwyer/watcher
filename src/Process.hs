@@ -4,9 +4,10 @@ module Process
 import System.IO
 import System.Process
 
-runProc programPath args = do
-    putStrLn $ "> running  " ++ programPath ++ " on " ++ head args ++ "..."
-    (_, Just hout, _, _) <- createProcess (proc programPath args){ std_out = CreatePipe, cwd = Just "." }
+runProc :: FilePath -> FilePath -> IO ()
+runProc programPath targetFile = do
+    putStrLn $ "> running  " ++ programPath ++ " on " ++ targetFile ++ "..."
+    (_, Just hout, _, _) <- createProcess (proc programPath [targetFile]){ std_out = CreatePipe, cwd = Just "." }
     dateOut <- hGetContents hout
     putStrLn dateOut
 

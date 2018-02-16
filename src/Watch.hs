@@ -6,12 +6,13 @@ import System.FSNotify
 import Control.Concurrent (threadDelay)
 import Control.Monad (forever)
 
-watch action =
+watch :: Action -> FilePath -> IO a
+watch action targetDir =
   withManager $ \mgr -> do
     -- start a watching job (in the background)
     watchDir
       mgr          -- manager
-      "c:\\temp"          -- directory to watch
+      targetDir        -- directory to watch
       (const True) -- predicate
       action       -- action
 

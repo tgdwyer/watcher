@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 1b7348f9ea273e94d6145711d1e5625e27c592542786b5a8ac4ef673bdc242f6
+-- hash: 30c84606d1c16293f8ef45a9aebf52e427c10b9eb3c25ad9498b8a4cacc44fb5
 
 name:           watcher
 version:        0.1.0.0
@@ -46,6 +46,9 @@ executable watcher-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , bytestring
+    , filepath
+    , pureMD5
     , watcher
   other-modules:
       Paths_watcher
