@@ -8,11 +8,11 @@ $ stack build && stack install
 I use it to run [doctest](https://github.com/sol/doctest) on a source file with tests embedded in comments whenever that file changes,
 e.g. to run doctest on tst.hs whenever tst.hs changes:
 ```
-$ watcher "c:/Users/Tim Dwyer/AppData/Roaming/local/bin/doctest.exe" "c:\\temp\\tst.hs"
+$ watcher c:/temp/tst.hs "$(where doctest)"
+Watching C:/temp/tst.hs ...
 ```
-Then, whenever tst.hs changes, you'll see:
+Then, whenever tst.hs changes, you'll either see:
 ```
-Modified "C:\\temp\\tst.hs" 2018-02-16 07:21:06.3784167 UTC
 > running  c:/Users/Tim Dwyer/AppData/Roaming/local/bin/doctest.exe on c:\temp\tst.hs...
 Examples: 1  Tried: 1  Errors: 0  Failures: 0
 ```

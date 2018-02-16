@@ -29,7 +29,7 @@ library:
   - fsnotify
 
 executables:
-  watcher-exe:
+  watcher:
     main:                Main.hs
     source-dirs:         app
     ghc-options:

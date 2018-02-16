@@ -2,7 +2,7 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 30c84606d1c16293f8ef45a9aebf52e427c10b9eb3c25ad9498b8a4cacc44fb5
+-- hash: f39eaef032defd63baa8d4d9147709579e73044c8d353838f9a47c6f44e52cfd
 
 name:           watcher
 version:        0.1.0.0
@@ -39,7 +39,7 @@ library
       Paths_watcher
   default-language: Haskell2010
 
-executable watcher-exe
+executable watcher
   main-is: Main.hs
   hs-source-dirs:
       app

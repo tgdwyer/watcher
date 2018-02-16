@@ -12,6 +12,7 @@ import Data.Digest.Pure.MD5
 main :: IO ()
 main = do
     (target:program:_) <- getArgs
+    putStrLn $ "Watching " ++ target ++ " ..."
     watch (\_->runProc program target) (takeDirectory target)
 
 -- this was an experiment to see if MD5s could help with double firing events.
