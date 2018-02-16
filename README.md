@@ -16,7 +16,7 @@ Modified "C:\\temp\\tst.hs" 2018-02-16 07:21:06.3784167 UTC
 > running  c:/Users/Tim Dwyer/AppData/Roaming/local/bin/doctest.exe on c:\temp\tst.hs...
 Examples: 1  Tried: 1  Errors: 0  Failures: 0
 ```
-or:
+or something like:
 ```
 > running  c:/users/tim dwyer/appdata/roaming/local/bin/doctest.exe on C:\temp\tst.hs...
 ### Failure in C:\temp\tst.hs:5: expression `factorial 3'

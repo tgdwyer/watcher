@@ -6,9 +6,15 @@ import System.FSNotify
 import Control.Concurrent (threadDelay)
 import Control.Monad (forever)
 
+conf = WatchConfig {
+  confDebounce = Debounce 10, 
+  confUsePolling = False, 
+  confPollInterval = 1000
+}
+
 watch :: Action -> FilePath -> IO a
 watch action targetDir =
-  withManager $ \mgr -> do
+  withManagerConf conf $ \mgr -> do
     -- start a watching job (in the background)
     watchDir
       mgr          -- manager
