@@ -1,6 +1,11 @@
 # watcher
 General purpose directory / file watcher that runs a specified task when files change.  Implemented in Haskell.
 
+Usage:
+```
+watcher <path to file to watch> <path to program to apply to file>
+```
+
 Build and install with [stack](https://docs.haskellstack.org/en/stable/README/).
 ```
 $ stack build && stack install
