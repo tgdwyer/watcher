@@ -8,13 +8,18 @@ import System.FilePath
 -- import Data.Digest.Pure.MD5
 
 -- e.g.:
--- target = "/home/dwyer/src"
--- program = "/home/dwyer/.local/bin/doctest.exe"
+-- $ watcher src doctest
 main :: IO ()
 main = do
-    (target:program:_) <- getArgs
-    putStrLn $ "Watching " ++ target ++ " ..."
-    watch (runProc program) (takeDirectory target)
+    args <- getArgs
+    if length args /= 2 || "-h" `elem` args || "--help" `elem` args then do
+        progName <- getProgName
+        putStrLn $ progName ++ " - Watch a directory and run a program on files after they are modified"
+        putStrLn $ "Usage: " ++ progName ++ " targetDir program"
+    else do
+        let (target:program:_) = args
+        putStrLn $ "Watching " ++ target ++ " ..."
+        watch (runProc program) target
 
 -- this was an experiment to see if MD5s could help with double firing events.
 -- In the end, adding a debounce time to the watcher did the trick.
