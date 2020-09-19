@@ -1,8 +1,10 @@
--- This file has been generated from package.yaml by hpack version 0.20.0.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: f39eaef032defd63baa8d4d9147709579e73044c8d353838f9a47c6f44e52cfd
+-- hash: be352a042cb00d188c0339b514ae0d5219b23abaac68dd29e2ce1c7dc0e19402
 
 name:           watcher
 version:        0.1.0.0
@@ -15,11 +17,9 @@ copyright:      2018 Author name here
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
-cabal-version:  >= 1.10
-
 extra-source-files:
-    ChangeLog.md
     README.md
+    ChangeLog.md
 
 source-repository head
   type: git
@@ -29,7 +29,8 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      ansi-terminal
+    , base >=4.7 && <5
     , fsnotify
     , process
   exposed-modules:
@@ -46,9 +47,7 @@ executable watcher
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , bytestring
     , filepath
-    , pureMD5
     , watcher
   other-modules:
       Paths_watcher

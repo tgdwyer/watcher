@@ -27,6 +27,7 @@ library:
   dependencies:
   - process
   - fsnotify
+  - ansi-terminal
 
 executables:
   watcher:
@@ -39,8 +40,8 @@ executables:
     dependencies:
     - watcher
     - filepath
-    - pureMD5
-    - bytestring
+    # - pureMD5
+    # - bytestring
 
 tests:
   watcher-test:
