@@ -28,6 +28,8 @@ library:
   - process
   - fsnotify
   - ansi-terminal
+  ghc-options:
+  - -threaded
 
 executables:
   watcher:

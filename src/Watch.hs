@@ -8,7 +8,7 @@ import Control.Monad (forever)
 
 conf = WatchConfig {
   confDebounce = Debounce 10, 
-  confUsePolling = False, 
+  confUsePolling = True, 
   confPollInterval = 1000
 }
 
